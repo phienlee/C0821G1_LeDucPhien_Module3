@@ -15,8 +15,6 @@ create table bill (
  foreign key (`quantity_bill`) references bill_details(`quantity_bill`)
 );
  
-
-
 create table enter_coupon_details (
 price_enter_coupon double,
 quantity_enter_coupon int
