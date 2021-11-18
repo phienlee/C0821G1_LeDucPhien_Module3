@@ -25,7 +25,7 @@ create table student
 (
     sub_id   int         not null auto_increment primary key,
     sub_name varchar(30) not null,
-    credit  tinyint     not null default 1 check ( credit >= 1 ),
+    credit  int     not null default 1 check ( credit >= 1 ),
     `status`  bit                  default 1
 );
 

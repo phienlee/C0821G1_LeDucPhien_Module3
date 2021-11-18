@@ -199,13 +199,37 @@ insert into customers(customer_type_id, full_name, date_of_birth, id_card_number
 	(1, 'Joan', '1977-06-20', '208872125', '0333576575', 'joan@gmail.com', 'Spanish' ),
 	(2, 'Take Uchi Satoru', '1971-01-19', '208876546', '090765659', 'take_uchi@gmail.com', 'Japan' ),
 	(2, 'Ty Colin', '1975-11-28', '207776517', '091767658', 'ty_colin@gmail.com', 'Us' ),
-	(1, 'Dang Chi Trung', '1993-08-19', '209971242', '0333765651', 'trung_dang@gmail.com', 'Quang Nam' ),
+	(1, 'Dang Chi Trung', '1993-08-19', '209971242', '0333765651', 'trung_dang@gmail.com', 'Quang Ngai' ),
 	(2, 'Nguyen Thi Thu Ha', '1996-11-19', '208877611', '0345176510', 'ha_nguyen@gmail.com', 'Quang Tri' ),
 	(3, 'Nguyen Hong Dang', '1988-12-30', '208845540', '0906588335', 'dang_nguyen@gmail.com', 'Ha Noi' ),
 	(2, 'Tran Truong Hai', '1998-07-29', '212376541', '0944456056', 'hai_truong@gmail.com', 'Quang Nam' ),
 	(1, 'Tran Minh Chien', '1997-10-17', '208856459','0333765651', 'chien_tran@gmail.com', 'Quang Tri' ),
-	(2, 'Doan Phuoc Trung', '1989-08-24', '218846561', '0917063678', 'trung_doan@gmail.com', 'Da Nang' );
+	(2, 'Doan Phuoc Trung', '1989-08-24', '218846561', '0917063678', 'trung_doan@gmail.com', 'Vinh' );
 
+insert into contracts(employee_id, customer_id, service_id, date_started, date_finished, down_payment, total_payment)
+values
+	(1, 1, 2, '2015-10-16', '2015-10-28', 150000, 1000000),
+	(2, 2, 2, '2016-11-10', '2019-11-15', 100000, 1000000),
+	(3, 3, 1, '2019-12-26', '2019-12-30', 200000, 2000000),
+	(2, 4, 3, '2017-07-12', '2018-07-28', 100000, 10000000),
+	(3, 4, 2, '2017-09-16', '2015-11-20', 200000, 1000000),
+	(2, 2, 4, '2018-01-09', '2018-01-12', 100000, 1000000),
+	(4, 3, 1, '2018-10-16', '2018-10-28', 300000, 1000000),
+	(6, 3, 3, '2019-08-20', '2019-08-25', 100000, 1000000),
+	(7, 6, 2, '2019-11-07', '2019-11-19', 150000, 1000000),
+	(7, 7, 6, '2020-10-16', '2020-10-28', 150000, 1000000),
+	(7, 8, 5, '2021-03-16', '2021-03-20', 300000, 1000000);
+
+insert into contract_detail( contract_id, accompanied_service_id, amount)
+ value
+	(1, 1, 1 ),
+	(2, 2, 2 ),
+	(3, 3, 3 ),
+	(4, 4, 2 ),
+	(5, 5, 3 ),
+	(7, 2, 1 ),
+	(8, 3, 1 );
+    
 -- Task 2.	Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu là một trong các ký tự “H”, “T” hoặc “K” và có tối đa 15 ký tự.
 
 select *
@@ -265,3 +289,97 @@ where contracts.date_started not in (
     where (date_started between '2019-01-01' and '2019-03-31')
 )
 order by service_id;
+
+
+-- 7. Hiển thị thông tin IDDichVu, TenDichVu, DienTich, SoNguoiToiDa, ChiPhiThue, 
+-- TenLoaiDichVu của tất cả các loại dịch vụ đã từng được Khách hàng đặt 
+-- phòng trong năm 2018 nhưng chưa từng được Khách hàng đặt phòng trong năm 2019.
+
+
+select services.service_id, services.service_name, services.area_using, services.max_of_customer, 
+services.rental_fee, service_type.service_type_name, contracts.date_started
+from services
+	inner join service_type on services.service_type_id = service_type.service_type_id
+    left join contracts on services.service_id= contracts.service_id
+where services.service_id in (
+	select distinct  contracts.service_id
+    from contracts
+    where year(date_started)=2018
+) and services.service_id not in (
+	select distinct contracts.service_id
+	from contracts
+	where year(date_started) = 2019
+)
+order by service_id;
+
+-- 8.Hiển thị thông tin họ tên khách hàng có trong hệ thống, với yêu cầu họ tên không trùng nhau.
+
+-- cách 1
+select  distinct full_name
+from customers;
+
+-- cách 2
+select *
+from customers
+group by full_name;
+
+-- cách 3
+select *
+from customers t1
+	left join customers t2 on t1.full_name = t2.full_name and t1.customer_id>t2.customer_id
+where t2.full_name is null;
+
+-- 9. Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2019 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
+
+insert into contracts(employee_id, customer_id, service_id, date_started, date_finished, down_payment, total_payment)
+value
+	(7, 1, 2, '2019-11-01', '2019-11-20', 150000, 1600000),
+	(2, 2, 2, '2019-12-08', '2019-12-28', 100000, 3000000);
+    
+select month(contracts.date_started) as month_booking, sum(total_payment) as total_payment_in_month, count(*) as no_of_booking
+from contracts
+where year(contracts.date_started) = 2019
+group by month(contracts.date_started)
+order by month(contracts.date_started);
+
+-- 10. Hiển thị thông tin tương ứng với từng Hợp đồng thì đã sử dụng bao nhiêu Dịch vụ đi kèm. 
+-- Kết quả hiển thị bao gồm IDHopDong, NgayLamHopDong, NgayKetthuc, TienDatCoc,
+-- SoLuongDichVuDiKem (được tính dựa trên việc sum các DichVuDiKem).
+
+select contracts.contract_id, contracts.date_started, contracts.date_finished, contracts.down_payment, 
+contract_detail.amount, count(*) as amount_of_accompaning_serivce
+from contracts left join contract_detail on contract_detail.contract_id = contracts.contract_id
+group by contract_id
+order by amount_of_accompaning_serivce;
+
+-- 11. Hiển thị thông tin các Dịch vụ đi kèm đã được sử dụng bởi những Khách hàng có 
+-- TenLoaiKhachHang là “Diamond” và có địa chỉ là “Vinh” hoặc “Quảng Ngãi”.
+
+select customers.customer_id, customers.address, customer_type.customer_type_name,
+ accompanied_service.accompanied_service_name, accompanied_service.price
+from customers 
+	inner join customer_type on customers.customer_type_id = customer_type.customer_type_id
+	left join contracts on contracts.customer_id = customers.customer_id
+    inner join contract_detail on contract_detail.contract_id=contracts.contract_id
+    inner join accompanied_service on accompanied_service.accompanied_service_id = contract_detail.accompanied_service_id
+where customer_type.customer_type_name='Diamond' and customers.address in ('Quang Ngai', 'Vinh');
+
+-- 12. Hiển thị thông tin IDHopDong, TenNhanVien, TenKhachHang, SoDienThoaiKhachHang, TenDichVu, SoLuongDichVuDikem 
+-- (được tính dựa trên việc sum số lượng của DichVuDiKem), TienDatCoc của tất cả các dịch vụ đã từng được khách hàng đặt vào 3 
+-- tháng cuối năm 2019 nhưng chưa từng được khách hàng đặt vào 6 tháng đầu năm 2019.
+
+select contracts.contract_id, employees.full_name as employee_name, customers.full_name as customer_name,
+ customers.phone_number as customer_phone_number, services.service_name
+, count(*) as amount_of_accompaning_serivce, contracts.date_started, contracts.down_payment
+from employees
+	inner join contracts on contracts.employee_id = employees.employee_id
+    inner join customers on customers.customer_id=contracts.customer_id
+    inner join services on services.service_id= contracts.service_id
+    inner join contract_detail on contract_detail.contract_id= contracts.contract_id
+where (month(date_started) between 9 and 12) and (year(date_started)=2019) and month(date_started) not in (
+	select contract_id
+    from contracts
+    where month(date_started) between 1 and 6
+)
+group by contracts.contract_id
+order by amount_of_accompaning_serivce;
