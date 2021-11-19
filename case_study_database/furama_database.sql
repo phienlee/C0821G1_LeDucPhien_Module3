@@ -329,6 +329,23 @@ from customers t1
 	left join customers t2 on t1.full_name = t2.full_name and t1.customer_id>t2.customer_id
 where t2.full_name is null;
 
+-- Cách 4 dùng UNION
+select full_name, customer_id
+from customers
+union
+select full_name,customer_id
+from customers;
+
+-- Cách 5 dùng exists
+select *
+ from customers t1
+where not exists (
+	select 1
+    from customers t2
+    where t1.full_name= t2.full_name and t1.customer_id > t2.customer_id
+)
+order by customer_id;
+
 -- 9. Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2019 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
 
 insert into contracts(employee_id, customer_id, service_id, date_started, date_finished, down_payment, total_payment)
