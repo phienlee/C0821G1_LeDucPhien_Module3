@@ -400,3 +400,169 @@ where (month(date_started) between 9 and 12) and (year(date_started)=2019) and m
 )
 group by contracts.contract_id
 order by amount_of_accompaning_serivce;
+
+-- 13.Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng.
+-- (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).
+
+set @max_of_use = (select max(max_of_ac) 
+from (select accompanied_service.accompanied_service_id, count(accompanied_service.accompanied_service_id)as max_of_ac
+from employees
+	inner join contracts on contracts.employee_id = employees.employee_id
+    inner join customers on customers.customer_id=contracts.customer_id
+    inner join services on services.service_id= contracts.service_id
+    inner join contract_detail on contract_detail.contract_id= contracts.contract_id
+    inner join accompanied_service on accompanied_service.accompanied_service_id= contract_detail.accompanied_service_id
+group by accompanied_service.accompanied_service_id) as nou);
+
+select  @max_of_use;
+
+set @min_of_use = (select min(minOfAc) 
+from (select accompanied_service.accompanied_service_id, count(accompanied_service.accompanied_service_id)as minOfAc
+from employees
+	inner join contracts on contracts.employee_id=employees.employee_id
+    inner join customers on customers.customer_id=contracts.customer_id
+    inner join services on services.service_id= contracts.service_id
+    inner join contract_detail on contract_detail.contract_id= contracts.contract_id
+    inner join accompanied_service on accompanied_service.accompanied_service_id= contract_detail.accompanied_service_id
+group by accompanied_service.accompanied_service_id) as nou);
+
+select @min_of_use;
+
+select contracts.contract_id, accompanied_service.accompanied_service_name, count(accompanied_service.accompanied_service_id)as no_of_using
+from employees
+	inner join contracts on contracts.employee_id=employees.employee_id
+    inner join customers on customers.customer_id=contracts.customer_id
+    inner join services on services.service_id= contracts.service_id
+    inner join contract_detail on contract_detail.contract_id= contracts.contract_id
+    inner join accompanied_service on accompanied_service.accompanied_service_id= contract_detail.accompanied_service_id
+group by accompanied_service.accompanied_service_id
+having no_of_using= @max_of_use
+order by no_of_using;
+
+select contracts.contract_id, accompanied_service.accompanied_service_name, count(accompanied_service.accompanied_service_id)as no_of_using
+from employees
+	inner join contracts on contracts.employee_id=employees.employee_id
+    inner join customers on customers.customer_id=contracts.customer_id
+    inner join services on services.service_id= contracts.service_id
+    inner join contract_detail on contract_detail.contract_id= contracts.contract_id
+    inner join accompanied_service on accompanied_service.accompanied_service_id= contract_detail.accompanied_service_id
+group by accompanied_service.accompanied_service_id
+having no_of_using= @min_of_use
+order by no_of_using;
+
+-- other way
+select accompanied_service.accompanied_service_id, accompanied_service.accompanied_service_name, count(contract_detail.accompanied_service_id) as no_of_booking
+from contract_detail
+	inner join accompanied_service on accompanied_service.accompanied_service_id = contract_detail.accompanied_service_id
+group by contract_detail.accompanied_service_id
+having count(contract_detail.accompanied_service_id) =(select max(amount)
+	from (select 
+			count(accompanied_service_id) as no_of_booking
+            from contract_detail
+            group by accompanied_service_id) as no_of_use_accompanied
+);
+
+-- 14.Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. Thông tin hiển thị bao gồm
+-- IdHopDong, TenLoaiDichVu, TenDichVuDiKem, SoLuongSuDung (được tính dựa trên việc count các IdDichVuDiKem).
+
+select contracts.contract_id, accompanied_service.accompanied_service_name, count(accompanied_service.accompanied_service_id)as no_of_using
+from employees
+	inner join contracts on contracts.employee_id = employees.employee_id
+    inner join customers on customers.customer_id = contracts.customer_id
+    inner join services on services.service_id = contracts.service_id
+    inner join contract_detail on contract_detail.contract_id = contracts.contract_id
+    inner join accompanied_service on accompanied_service.accompanied_service_id= contract_detail.accompanied_service_id
+group by accompanied_service.accompanied_service_id
+having no_of_using=1
+order by no_of_using;
+
+--  15. Hiển thi thông tin của tất cả nhân viên bao gồm IDNhanVien, HoTen, TrinhDo, TenBoPhan,
+-- SoDienThoai, DiaChi mới chỉ lập được tối đa 3 hợp đồng từ năm 2018 đến 2019
+
+select employees.employee_id, employees.full_name, positions.position_name, department.department_name, employees.phone_number, employees.address, count(contracts.contract_id) as no_of_contracts
+from employees
+	left join contracts on employees.employee_id = contracts.employee_id
+    inner join positions on positions.position_id = employees.position_id
+    inner join department on department.department_id = employees.department_id
+where year(date_started) between 2018 and 2019
+group by contracts.employee_id
+having no_of_contracts <=3;
+
+--  16. Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019
+-- Chưa hoàn thành còn hơi rối chỗ xóa
+-- Tắt chế độ ràng buộc khóa ngoại
+
+delete
+ from employees
+where employees.employee_id not in (
+select employees.employee_id
+from contracts
+where year() between 2017 and 2019
+);
+SET FOREIGN_KEY_CHECKS=0;
+select *
+from employees;
+
+-- 17. Cập nhật thông tin những khách hàng có TenLoaiKhachHang từ Platinium lên Diamond, chỉ cập nhật
+-- những khách hàng đã từng đặt phòng với tổng Tiền thanh toán trong năm 2019 là lớn hơn 10.000.000 VNĐ/500$
+
+SET SQL_SAFE_UPDATES = 0;
+select *
+from customer_type;
+update customers
+set customer_type_id=(
+	select customer_type_id
+    from customer_type
+    where customer_type_name='Diamond'
+);
+select *
+from customers
+where customer_type_id = (
+	select customer_type_id
+    from customer_type
+    where customer_type_name='Platinium'
+)
+and customer_type_id in (
+	select customer_id
+    from contracts 
+    group by customer_id
+    having sum(total_payment) > 10000000
+);
+SET SQL_SAFE_UPDATES = 1;
+
+-- 18. Xóa những khách hàng có hợp đồng trước năm 2016 (chú ý ràng buộc giữa các bảng)
+-- Chưa hoàn thành còn hơi rối chỗ xóa
+SET FOREIGN_KEY_CHECKS = 0;
+delete 
+from customers
+where customer_id in (
+	select customer_id
+    from contracts
+    where year(date_started) <2016
+);
+SET FOREIGN_KEY_CHECKS=1;
+
+-- 19. Cập nhật giá cho các Dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2019 lên gấp đôi
+
+SET SQL_SAFE_UPDATES = 0;
+update accompanied_service
+set price= price*2
+where accompanied_service_id in (
+	select accompanied_service_id
+    from contract_detail
+		inner join contracts on contracts.contract_id=contract_detail.contract_id
+    group by contract_detail.accompanied_service_id
+    having count(accompanied_service_id)>10
+);
+SET SQL_SAFE_UPDATES = 1;
+select *
+from service_type;
+
+
+-- 20. Hiển thị thông tin của tất cả các Nhân viên và Khách hàng có trong hệ thống,
+-- thông tin hiển thị bao gồm ID (IDNhanVien, IDKhachHang), HoTen, Email, SoDienThoai, NgaySinh, DiaChi.
+
+select employee_id as id, full_name, email, phone_number, date_of_birth, address
+from employees
+union all select customer_id as id, full_name, email, phone_number, date_of_birth, address
+from customers;
