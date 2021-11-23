@@ -489,7 +489,6 @@ group by contracts.employee_id
 having no_of_contracts <=3;
 
 --  16. Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019
--- Chưa hoàn thành còn hơi rối chỗ xóa
 -- Tắt chế độ ràng buộc khóa ngoại
 
 delete
@@ -531,7 +530,7 @@ and customer_type_id in (
 SET SQL_SAFE_UPDATES = 1;
 
 -- 18. Xóa những khách hàng có hợp đồng trước năm 2016 (chú ý ràng buộc giữa các bảng)
--- Chưa hoàn thành còn hơi rối chỗ xóa
+
 SET FOREIGN_KEY_CHECKS = 0;
 delete 
 from customers
