@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.row:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+[class *="col-"] {
+    float: left;
+}
+
+.header {
+    background-color: #666666;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+.left  input[type=text] {
+    float: right;
+    padding: 2px;
+    margin-text-outline: 4px;
+    margin-right: 2px;
+    margin-left: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 17px;
+}
+.middle{
+    margin-top: 4px;
+}
+.other{
+    margin-top: 4px;
+}
+ul li{
+    list-style-type: none;
+    float: left;
+    padding: 5px;
+    line-height: revert;
+}
+.menu_nav_top {
+    margin-top: 20px;
+    margin-left: 5px;
+}
+.menu_nav_top table{
+    margin: 5px;
+}
+.menu_nav_top table td, tr{
+    padding: 10px;
+}
+.nav_shortcut table td, tr{
+    padding: 10px;
+}
+i{
+    font-size: 2rem;
+}
+a{
+    text-decoration: none;
+}

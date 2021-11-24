@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .row:after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        [class *="col-"] {
+            float: left;
+        }
+
+
+        @media only screen and (max-width: 768px) {
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+<div class="row main">
+    <div class="row header">
+        <div class="col-6 menu">
+            <ul>
+                <li><a href="#">LOGO</a></li>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">PROJECTS</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </div>
+        <div class="col-6 login">
+            <a href="#"><img src="Screenshot 2021-11-24 164525.png" height="63" width="123"/></a>
+        </div>
+    </div>
+    <div content="sidebar">
+        <div class="row section">
+            <ul>
+                <li><a href="#">link</a></li>
+                <br>
+                <li><a href="#">link</a></li>
+                <br>
+                <li><a href="#">link</a></li>
+            </ul>
+        </div>
+        <div class="row content">
+            <h1>
+                <strong>Welcome</strong>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus error exercitationem labore libero
+                nemo
+                possimus provident reiciendis temporibus. Ad aliquam architecto cupiditate eius eos fugit illo laborum
+                non
+                odio, quos.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet consectetur consequuntur dolorem
+                eaque enim est exercitationem explicabo, fuga harum ipsam ipsum officia pariatur perferendis ratione
+                rerum
+                sed soluta ullam.
+            </p>
+        </div>
+        <div class="row aside">
+            <div class="col-12 aside1">
+                ADS
+            </div>
+            <div class="col-12 aside2">
+                ADS
+            </div>
+        </div>
+    </div>
+    <div class="row footer">
+        Footer Text
+    </div>
+</div>
+</body>
+</html>

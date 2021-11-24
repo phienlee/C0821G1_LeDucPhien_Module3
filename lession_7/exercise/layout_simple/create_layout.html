@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .row:after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        [class *="col-"] {
+            float: left;
+        }
+
+        .header {
+            text-align: center;
+            height: 100px;
+            background: #796676;
+        }
+
+        .nav {
+            text-align: center;
+            height: 100px;
+            background: #666666;
+        }
+
+        .content {
+            height: 200px;
+        }
+
+        .section {
+            text-align: center;
+            background: rebeccapurple;
+            height: 100px;
+        }
+
+        .article {
+            text-align: center;
+            background: #3B5998;
+            height: 100px;
+        }
+
+        .aside {
+            text-align: center;
+            background: #33b5e5;
+            height: 200px;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            background: black;
+            height: 80px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            [class*="col-"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="row main">
+    <div class="row header">
+        <p>header</p>
+    </div>
+    <div class="row nav">
+        nav
+    </div>
+    <div class="row content">
+        <div class="col-8 content_left">
+            <div class="row section">
+                section
+            </div>
+            <div class="row article">
+                article
+            </div>
+        </div>
+        <div class="col-4 aside">
+            aside
+        </div>
+    </div>
+    <div class="footer">
+        <p>footer</p>
+    </div>
+</div>
+</body>
+</html>
