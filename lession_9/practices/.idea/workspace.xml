@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0643eb63-0b3d-4248-934a-65836a057670" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/jstl_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lesson_9_Web_Basic.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/.idea/artifacts/product_discount_calculator_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/.idea/libraries/jstl_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/out/artifacts/product_discount_calculator_war_exploded/WEB-INF/classes/ProductCalculatorServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/out/artifacts/product_discount_calculator_war_exploded/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/out/artifacts/product_discount_calculator_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/out/artifacts/product_discount_calculator_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/out/artifacts/product_discount_calculator_war_exploded/show_discount.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/out/production/product_discount_calculator/ProductCalculatorServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/product_discount_calculator.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/src/ProductCalculatorServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/web/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercises_product_discount_calculator/web/show_discount.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/.idea/artifacts/convert_coin_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/.idea/libraries/jstl_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/convert_coin.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/out/artifacts/convert_coin_war_exploded/WEB-INF/classes/ConvertCoinServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/out/artifacts/convert_coin_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/out/artifacts/convert_coin_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/out/artifacts/convert_coin_war_exploded/show_result.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/out/production/convert_coin/ConvertCoinServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/src/ConvertCoinServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/web/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_convert_coin/web/show_result.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/.idea/artifacts/dictionary_simple_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/.idea/libraries/jstl_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/dictionary_simple.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/out/artifacts/dictionary_simple_war_exploded/ShowWord.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/out/artifacts/dictionary_simple_war_exploded/WEB-INF/classes/DictionaryServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/out/artifacts/dictionary_simple_war_exploded/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/out/artifacts/dictionary_simple_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/out/artifacts/dictionary_simple_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/out/artifacts/dictionary_simple_war_exploded/show_word..jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/out/production/dictionary_simple/DictionaryServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/src/DictionaryServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/web/ShowWord.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/web/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_dictionary_simple/web/show_word..jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/.idea/artifacts/demo_casestudy_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/.idea/libraries/jstl_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/demo_casestudy.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/out/artifacts/demo_casestudy_war_exploded/ShowAccount.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/out/artifacts/demo_casestudy_war_exploded/WEB-INF/classes/DemoServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/out/artifacts/demo_casestudy_war_exploded/WEB-INF/classes/META-INF/demo_casestudy.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/out/artifacts/demo_casestudy_war_exploded/WEB-INF/lib/jstl-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/out/artifacts/demo_casestudy_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/out/artifacts/demo_casestudy_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/out/production/demo_casestudy/DemoServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/src/DemoServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/web/ShowAccount.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_login_form/web/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/.idea/artifacts/Systemstime_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/Systemstime.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/out/artifacts/Systemstime_war_exploded/WEB-INF/classes/ServerTimeServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/out/artifacts/Systemstime_war_exploded/WEB-INF/classes/SumNewServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/out/artifacts/Systemstime_war_exploded/WEB-INF/classes/SumServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/out/artifacts/Systemstime_war_exploded/WEB-INF/classes/TestServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/out/artifacts/Systemstime_war_exploded/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/out/artifacts/Systemstime_war_exploded/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/out/artifacts/Systemstime_war_exploded/result.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/out/artifacts/Systemstime_war_exploded/sum_servlet.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/out/production/Systemstime/ServerTimeServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/out/production/Systemstime/SumNewServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/out/production/Systemstime/SumServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/out/production/Systemstime/TestServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/src/ServerTimeServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/src/SumNewServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/src/SumServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/src/TestServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/web/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/web/result.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practises_systemstime/web/sum_servlet.jsp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="21UyaqdpWogEKgl1GGHIYosIZTX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0643eb63-0b3d-4248-934a-65836a057670" name="Changes" comment="" />
+      <created>1638010027676</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638010027676</updated>
+      <workItem from="1638010029199" duration="194000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
